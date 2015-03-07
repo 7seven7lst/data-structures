@@ -41,7 +41,7 @@ HashTable.prototype.retrieve = function(k){
 };
 
 HashTable.prototype.remove = function(k){
-  console.log("in remove, the limit",this._limit);
+  //console.log("in remove, the limit",this._limit);
   this.halfSize();
   var i=getIndexBelowMaxForKey(k,this._limit);
   this._storage.set(i,null);
@@ -89,9 +89,9 @@ HashTable.prototype.doubleSize=function(){
 HashTable.prototype.halfSize=function(){
   var fillLevel=this.getFillLevel();
   if (fillLevel+1<=0.25*this._limit){
-    console.log(this._limit);
+    //console.log(this._limit);
     this._limit/=2;
-    console.log(this._limit);
+    //aconsole.log(this._limit);
     var temp=LimitedArray(this._limit);
 
     for (var i=0; i<this._limit*2; i++){
